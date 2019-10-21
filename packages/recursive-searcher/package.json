@@ -1,0 +1,41 @@
+{
+	"name": "chain-validator",
+	"version": "0.0.0",
+	"description": "dmethod chain varidator",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "NODE_ENV=production webpack --config ./webpack.config.js",
+		"build:watch": "NODE_ENV=production webpack --config ./webpack.config.js --watch",
+		"lint": "eslint ./src/*",
+		"test": "jest",
+		"test:watch": "jest --watch"
+	},
+	"author": "szgk <dev@szgk.xyz> (szgk.xyz)",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.6.4",
+		"@babel/plugin-proposal-class-properties": "^7.5.5",
+		"@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+		"@babel/polyfill": "^7.4.4",
+		"@babel/preset-env": "^7.6.3",
+		"@babel/preset-typescript": "^7.3.3",
+		"@typescript-eslint/eslint-plugin": "^2.3.1",
+		"@typescript-eslint/parser": "^2.3.1",
+		"babel-jest": "^24.9.0",
+		"babel-loader": "^8.0.6",
+		"eslint": "^6.0.1",
+		"eslint-config-prettier": "^6.3.0",
+		"eslint-config-szgk": "git+https://github.com/szgk/eslint-config-szgk.git#master",
+		"eslint-plugin-import": "^2.18.2",
+		"eslint-plugin-prettier": "^3.1.1",
+		"jest": "^24.8.0",
+		"prettier": "^1.18.2",
+		"prettier-eslint": "^9.0.0",
+		"progress-bar-webpack-plugin": "^1.12.1",
+		"ts-loader": "^6.0.4",
+		"typescript": "^3.5.3",
+		"webpack": "^4.30.0",
+		"webpack-cli": "^3.3.1"
+	},
+	"dependencies": {}
+}
