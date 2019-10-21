@@ -1,5 +1,5 @@
 import {Any, Cls} from '../../../types'
-import searcher from '../../recursive-searcher/src/main'
+import searcher from 'recursive-searcher'
 
 class ChainValidator {
   constructor() {}

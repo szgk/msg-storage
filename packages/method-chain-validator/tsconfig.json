@@ -1,11 +1,12 @@
 {
-  "include": ["./src/**/*.ts"],
+  "include": ["./src/**/*.ts", "../../types/recursive-searcher.d.ts"],
   "exclude": [
     "node_modules",
     "**/*.js",
     "**/*.spec.js"
   ],
   "compilerOptions": {
+    "typeRoots" : ["../../types"],
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
