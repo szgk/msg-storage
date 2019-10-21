@@ -1,6 +1,6 @@
 {
 	"name": "recursive-searcher",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "recursive-searcher",
 	"main": "dist/index.js",
 	"scripts": {
