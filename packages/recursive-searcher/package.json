@@ -1,7 +1,7 @@
 {
-	"name": "chain-validator",
+	"name": "recursive-searcher",
 	"version": "0.0.0",
-	"description": "dmethod chain varidator",
+	"description": "recursive-searcher",
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "NODE_ENV=production webpack --config ./webpack.config.js",
@@ -36,6 +36,5 @@
 		"typescript": "^3.5.3",
 		"webpack": "^4.30.0",
 		"webpack-cli": "^3.3.1"
-	},
-	"dependencies": {}
+	}
 }

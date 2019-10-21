@@ -1,15 +1,15 @@
-# chain-validator
+# method chain-validator
 
-methos chain validator
+method chain validator
 
 ## Usage
 
 ```
-npm install -D chain-validator
+npm install -D method-chain-validator
 
-import cv from 'chain-validator'
+import mcv from 'method-chain-validator'
 
-cv({}).is.obj() // return true
+mcv({}).is.obj() // return true
 ```
 
 ## Method
