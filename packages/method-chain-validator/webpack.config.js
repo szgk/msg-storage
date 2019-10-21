@@ -8,8 +8,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'index.js',
-    library: 'chain-validator',
+    library: 'method-chain-validator',
     libraryTarget: 'umd',
+    globalObject  : 'this',
   },
   devtool: isDev ? 'source-map' : false,
   module: {

@@ -1,6 +1,11 @@
 {
   "name": "root",
   "private": true,
+	"scripts": {
+		"build:method-chain-validator": "cd packages/method-chain-validator && NODE_ENV=production webpack --config ./webpack.config.js",
+    "build:recursive-searcher": "cd packages/method-chain-validator && NODE_ENV=production webpack --config ./webpack.config.js",
+    "build:all": "npm run build:method-chain-validator && npm run build:recursive-searcher"
+  },
   "devDependencies": {
     "lerna": "^3.16.4"
   }
