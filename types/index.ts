@@ -6,3 +6,8 @@ export enum Cls {
   DATE = '[object Date]',
   REGEXP = '[object RegExp]',
 }
+
+export interface Messages {
+  [key: string]: string | Messages;
+  [key: number]: string | Messages;
+}
