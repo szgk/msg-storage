@@ -1,6 +1,6 @@
 # msg storage
 
-mesasge storage
+messasge storage
 
 ## Usage
 
