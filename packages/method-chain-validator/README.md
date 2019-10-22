@@ -28,3 +28,7 @@ mcv({}).is.obj() // return true
 - .is.equalObj()
 - .is.has()
 - .is.not()
+- .haOnlyString()
+- .haOnlyNumber()
+- .haOnlyNil()
+- .haOnlyUndef()

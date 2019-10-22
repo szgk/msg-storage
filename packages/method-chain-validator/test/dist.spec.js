@@ -227,7 +227,7 @@ test('[success] cvalidator.is.has', () => {
   expect(cv('a').has('')).toBeFalsy()
 })
 
-test('[success] cvalidator.is.has', () => {
+test('[success] cvalidator.is.not', () => {
   expect(cv([]).is.not.obj()).toBeTruthy()
   expect(cv({}).is.not.array()).toBeTruthy()
   expect(cv(1).is.not.string()).toBeTruthy()
@@ -241,4 +241,37 @@ test('[success] cvalidator.is.has', () => {
   expect(cv(new Error()).is.not.sameError(new Error('hoge'))).toBeTruthy()
   expect(cv({}).is.not.equalObj({a: ''})).toBeTruthy()
   expect(cv({}).is.not.equal({a: ''})).toBeTruthy()
+})
+
+test('[success] cvalidator.haOnlyString', () => {
+  expect(cv(['']).haOnlyString()).toBeTruthy()
+  expect(cv([{a:{b:'', c:[[[['']]]]}}]).haOnlyString()).toBeTruthy()
+
+  expect(cv([]).haOnlyString()).toBeFalsy()
+  expect(cv([{a:{b:'', c:[[[[null]]]]}}]).haOnlyString()).toBeFalsy()
+})
+
+test('[success] cvalidator.haOnlyNumber', () => {
+  expect(cv([1]).haOnlyNumber()).toBeTruthy()
+  expect(cv([{a:{b:1, c:[[[[0]]]]}}]).haOnlyNumber()).toBeTruthy()
+
+  expect(cv([false]).haOnlyNumber()).toBeFalsy()
+  expect(cv([{a:{b:1, c:[[[['2']]]]}}]).haOnlyNumber()).toBeFalsy()
+})
+
+test('[success] cvalidator.haOnlyNumber', () => {
+  expect(cv([null]).haOnlyNil()).toBeTruthy()
+  expect(cv([{a:{b:null, c:[[[[null]]]]}}]).haOnlyNil()).toBeTruthy()
+
+  expect(cv([false]).haOnlyNil()).toBeFalsy()
+  expect(cv([{a:{b:null, c:[[[['null']]]]}}]).haOnlyNil()).toBeFalsy()
+})
+
+test('[success] cvalidator.haOnlyUndef', () => {
+  let a
+  expect(cv([void 0]).haOnlyUndef()).toBeTruthy()
+  expect(cv([{a:{b:a, c:[[[[void 0]]]]}}]).haOnlyUndef()).toBeTruthy()
+
+  expect(cv([false]).haOnlyUndef()).toBeFalsy()
+  expect(cv([{a:{b:null, c:[[[[void 0]]]]}}]).haOnlyUndef()).toBeFalsy()
 })

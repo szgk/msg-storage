@@ -1,5 +1,5 @@
 import {Any, Cls} from '../../../types'
-import searcher from 'recursive-searcher'
+import rs from 'recursive-searcher'
 
 class ChainValidator {
   constructor() {}
@@ -67,9 +67,13 @@ class ChainValidator {
 
   public has = (param: Any): boolean => {
     if(this.equal(param)) return true
-
-    return searcher(this.param, param)
+    return rs.search(this.param, param)
   }
+
+  public haOnlyString = (): boolean => rs.every(this.param, (param: Any) => this.string(param))
+  public haOnlyNumber = (): boolean => rs.every(this.param, (param: Any) => this.number(param))
+  public haOnlyNil = (): boolean => rs.every(this.param, (param: Any) => this.nil(param))
+  public haOnlyUndef = (): boolean => rs.every(this.param, (param: Any) => this.undef(param))
 
 }
 
