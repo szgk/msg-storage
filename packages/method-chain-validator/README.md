@@ -1,4 +1,4 @@
-# method chain-validator
+# method chain validator
 
 method chain validator
 

@@ -9,7 +9,11 @@
 		"lint": "eslint ./src/*",
 		"test": "jest",
 		"test:watch": "jest --watch"
-	},
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/szgk/mstorage/tree/master/packages/method-chain-validator"
+  },  
 	"author": "szgk <dev@szgk.xyz> (szgk.xyz)",
 	"license": "MIT",
 	"devDependencies": {
