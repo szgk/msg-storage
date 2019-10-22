@@ -1,6 +1,6 @@
 {
 	"name": "recursive-searcher",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "recursive-searcher",
 	"main": "dist/index.js",
 	"scripts": {
@@ -9,6 +9,10 @@
 		"lint": "eslint ./src/*",
 		"test": "jest",
 		"test:watch": "jest --watch"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/szgk/mstorage/tree/master/packages/recursive-searcher"
 	},
 	"author": "szgk <dev@szgk.xyz> (szgk.xyz)",
 	"license": "MIT",
