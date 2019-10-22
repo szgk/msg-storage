@@ -1,3 +1,3 @@
-import validator from './ChainValidator'
+import validator from './MethodChainValidator'
 
 export default validator

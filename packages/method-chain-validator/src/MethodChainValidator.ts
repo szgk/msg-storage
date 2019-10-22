@@ -1,8 +1,7 @@
 import {Any, Cls} from '../../../types'
 import rs from 'recursive-searcher'
 
-class ChainValidator {
-  constructor() {}
+export class MethodChainValidator {
   private param: object | undefined = undefined
 
   private getClass = (param: Any): string => Object.prototype.toString.call(param)
@@ -43,22 +42,22 @@ class ChainValidator {
     equal: (param: Any): boolean => !this.equal(param),
   }
 
-  public validator = (param: object): ChainValidator => {
+  public validator = (param: object): MethodChainValidator => {
     this.param = param
     return this
   }
 
   public is = {
     not: this.not,
-    obj: () => this.obj(this.param),
-    array: () => this.array(this.param),
-    string: () => this.string(this.param),
-    number: () => this.number(this.param),
-    nil: () => this.nil(this.param),
-    undef: () => this.undef(this.param),
-    date: () => this.date(this.param),
-    regex: () => this.regex(this.param),
-    err: () => this.err(this.param),
+    obj: (): boolean => this.obj(this.param),
+    array: (): boolean => this.array(this.param),
+    string: (): boolean => this.string(this.param),
+    number: (): boolean => this.number(this.param),
+    nil: (): boolean => this.nil(this.param),
+    undef: (): boolean => this.undef(this.param),
+    date: (): boolean => this.date(this.param),
+    regex: (): boolean => this.regex(this.param),
+    err: (): boolean => this.err(this.param),
     same: (param: Any): boolean => this.same(param),
     sameError: (param: Any): boolean => this.sameError(param),
     equalObj: (param: Any): boolean => this.equalObj(param),
@@ -70,11 +69,11 @@ class ChainValidator {
     return rs.search(this.param, param)
   }
 
-  public haOnlyString = (): boolean => rs.every(this.param, (param: Any) => this.string(param))
-  public haOnlyNumber = (): boolean => rs.every(this.param, (param: Any) => this.number(param))
-  public haOnlyNil = (): boolean => rs.every(this.param, (param: Any) => this.nil(param))
-  public haOnlyUndef = (): boolean => rs.every(this.param, (param: Any) => this.undef(param))
+  public hasOnlyString = (): boolean => rs.every(this.param, (param: Any) => this.string(param))
+  public hasOnlyNumber = (): boolean => rs.every(this.param, (param: Any) => this.number(param))
+  public hasOnlyNil = (): boolean => rs.every(this.param, (param: Any) => this.nil(param))
+  public hasOnlyUndef = (): boolean => rs.every(this.param, (param: Any) => this.undef(param))
 
 }
 
-export default new ChainValidator().validator
+export default new MethodChainValidator().validator
