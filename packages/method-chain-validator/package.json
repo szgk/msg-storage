@@ -12,7 +12,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/szgk/mstorage/tree/master/packages/method-chain-validator"
+		"url": "https://github.com/szgk/msg-storage/tree/master/packages/method-chain-validator"
 	},
 	"author": "szgk <dev@szgk.xyz> (szgk.xyz)",
 	"license": "MIT",
