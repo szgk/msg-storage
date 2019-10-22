@@ -1,4 +1,4 @@
-export type Any = string | number | boolean | object | Object | RegExp | Date | Error | null | undefined
+export type Any = string | number | boolean | object | Function | Object | RegExp | Date | Error | null | undefined
 
 export type Obj = {[key: string]: Any, [key: number]: Any}
 

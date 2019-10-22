@@ -7,9 +7,11 @@ recursive searcher
 ```
 npm install -D recursive-searcher
 
-import cv from 'recursive-searcher'
+import rs from 'recursive-searcher'
 
-search({a: 1}, 1) // return true
+rs.search({a: 1}, 1) // return true
+
+rs.every({a: 'hoge', b: {c: 'fuga'}}, param => typeof param === 'string') // return true
 ```
 
 ## Method
@@ -18,3 +20,8 @@ search({a: 1}, 1) // return true
     - searched target
   - param
     - search parameter
+- every(target, validation)
+  - target
+    - searched target
+  - validation
+    - function for every paramater
