@@ -1,6 +1,6 @@
 {
 	"name": "method-chain-validator",
-	"version": "0.0.10",
+	"version": "0.1.0",
 	"description": "method chain varidator",
 	"main": "dist/index.js",
 	"scripts": {

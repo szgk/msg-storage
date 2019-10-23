@@ -48,10 +48,12 @@ declare module 'method-chain-validator' {
       equalObj: (param: Any): boolean => {},
       equal: (param: Any): boolean => {},
     },
-    has: (param: Any): boolean => {},
-    hasOnlyString: (): boolean => {},
-    hasOnlyNumber: (): boolean => {},
-    hasOnlyNil: (): boolean => {},
-    hasOnlyUndef: (): boolean => {},
+    has: {
+      some: (param: Any): boolean => {},
+      string: (): boolean => {},
+      number: (): boolean => {},
+      nil: (): boolean => {},
+      undef: (): boolean => {},
+    }
   })
 }
