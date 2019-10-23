@@ -2,7 +2,7 @@ import {Any, Cls} from '../../../types'
 import rs from 'recursive-searcher'
 
 export class MethodChainValidator {
-  private param: object | undefined = undefined
+  private param: Any | undefined = undefined
 
   private getClass = (param: Any): string => Object.prototype.toString.call(param)
   private castRegeExp = (param: Any): RegExp => (param as RegExp)
@@ -64,15 +64,26 @@ export class MethodChainValidator {
     equal: (param: Any): boolean => this.equal(param),
   }
 
-  public has = (param: Any): boolean => {
+  private some = (param: Any): boolean => {
     if(this.equal(param)) return true
     return rs.search(this.param, param)
   }
+  private onlyString = (): boolean => rs.every(this.param, (param: Any) => this.string(param))
+  private onlyNumber = (): boolean => rs.every(this.param, (param: Any) => this.number(param))
+  private onlyNil = (): boolean => rs.every(this.param, (param: Any) => this.nil(param))
+  private onlyUndef = (): boolean => rs.every(this.param, (param: Any) => this.undef(param))
 
-  public hasOnlyString = (): boolean => rs.every(this.param, (param: Any) => this.string(param))
-  public hasOnlyNumber = (): boolean => rs.every(this.param, (param: Any) => this.number(param))
-  public hasOnlyNil = (): boolean => rs.every(this.param, (param: Any) => this.nil(param))
-  public hasOnlyUndef = (): boolean => rs.every(this.param, (param: Any) => this.undef(param))
+  private only = {
+    string: () => this.onlyString(),
+    number: () => this.onlyNumber(),
+    nil: () => this.onlyNil(),
+    undef: () => this.onlyUndef(),
+  }
+
+  public has = {
+    some: (param: Any) => this.some(param),
+    only: this.only,
+  }
 
 }
 
