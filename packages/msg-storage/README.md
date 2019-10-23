@@ -10,7 +10,7 @@ npm install -D msg-storage
 import ms from 'msg-storage'
 
 ms.init({
-  message: {
+  messages: {
     greet: {
       hello: 'hello {{name}}.'
     }
